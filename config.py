@@ -1,9 +1,9 @@
 # Screen area to capture
 MONITOR = {
-  "top": 100,
-  "left": 0,
-  "width": 600,
-  "height": 600
+  "top": 500,
+  "left": 500,
+  "width": 1500,
+  "height": 400
 }
 
 # Directory to save images to

@@ -7,7 +7,7 @@ def extract_text(image_path):
     img = Image.open(image_path)
     # Extract Japanese text
     text = pytesseract.image_to_string(img, lang='jpn')
-    print(f"OCR result:\n{text.strip()}")
+    print(f"OCR result:\n{text}")
     # Return string
     return text.strip()
   except Exception as e:
