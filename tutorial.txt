@@ -1,0 +1,21 @@
+# Create Environment
+python3 -m venv env
+
+# Ensure script ermissions powershell
+Get-ExecutionPolicy
+
+# Activate Environment
+.\env\Scripts\Activate
+
+# View Packages
+pip list
+
+# Save Packages to .txt
+pip freeze > requirements.txt
+
+# Install Packages
+pip install -r requirements.txt
+
+# Deleting Env
+Just delete the folder
+rm -r env
