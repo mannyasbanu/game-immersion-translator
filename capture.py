@@ -1,30 +1,24 @@
-# pip install keyboard
-import keyboard
-# pip install mss
 import mss
 import mss.tools
+import datetime
+import os
 
-def captureScreen():
+# Import configurations
+from config import MONITOR, OUTPUT_DIR
+
+def capture_screen():
+  # Create directory unless it exists
+  os.makedirs(OUTPUT_DIR, exist_ok=True)
+  # Run context manager
   with mss.mss() as sct:
-    # screen area to capture
-    monitor = {
-      "top": 160,
-      "left": 160,
-      "width": 600,
-      "height": 600
-    }
-    # grab image
-    img = sct.grab(monitor)
-    output = "img.png".format(**monitor)
-    # save image
-    mss.tools.to_png(img.rgb, img.size, output=output)
-    print(output)
-
-print('loop started, s to screenshot, q to exit')
-while True:
-  if keyboard.is_pressed('q'):
-    break
-  if keyboard.is_pressed('s'):
-    captureScreen()
-  continue
-print('loop ended')
+    # Capture screen
+    img = sct.grab(MONITOR)
+    # Record timestamp
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    # Save image
+    filename = f"screenshot_{timestamp}.png"
+    filepath = os.path.join(OUTPUT_DIR, filename)
+    mss.tools.to_png(img.rgb, img.size, output=filepath)
+    print(f"Screenshot saved: {filepath}")
+    # Return filepath for OCR
+    return filepath
