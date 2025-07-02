@@ -1,9 +1,11 @@
 # Screen area to capture
+# Current settings support Persona 4 Golden subtitles at 1440p display fullscreen
+# Adjust accordingly based on display size
 MONITOR = {
-  "top": 500,
-  "left": 500,
-  "width": 1500,
-  "height": 400
+  "top": 1100,
+  "left": 130,
+  "width": 2160,
+  "height": 300
 }
 
 # Directory to save images to
