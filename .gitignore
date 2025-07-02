@@ -1,3 +1,10 @@
 # ENV
 env
 .env
+
+# Screenshots dir
+screenshots/
+
+# pycache
+__pycache__/
+*.pyc

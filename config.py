@@ -1,7 +1,7 @@
 # Screen area to capture
 MONITOR = {
-  "top": 160,
-  "left": 160,
+  "top": 100,
+  "left": 0,
   "width": 600,
   "height": 600
 }
